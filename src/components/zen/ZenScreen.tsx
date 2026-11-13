@@ -4,6 +4,7 @@ import {
   DEFAULT_ZEN,
   type Align,
   type AppId,
+  type FontStyle,
   type Size,
   type ThemeName,
   type Wall,
@@ -32,6 +33,7 @@ type Layer = "home" | "drawer";
 const SIZES = ["s", "m", "l"] as const;
 const ALIGNS = ["left", "center", "right"] as const;
 const THEMES = ["night", "day"] as const;
+const FONTS = ["zen", "workbench"] as const;
 const WALL_CHOICES = ["daily", "mist", "shore", "night"] as const;
 
 function cn(...parts: Array<string | false | null | undefined>) {
@@ -64,6 +66,10 @@ function wallLabel(wall: Wall) {
 
 function themeLabel(theme: ThemeName) {
   return theme === "day" ? "Day" : "Night";
+}
+
+function fontLabel(font: FontStyle) {
+  return font === "workbench" ? "Workbench" : "Zen";
 }
 
 function formatClock(date: Date, hour24: boolean) {
@@ -99,6 +105,7 @@ function sanitize(input: Partial<ZenData>): ZenData {
     }
   }
   const theme: ThemeName = input.theme === "day" ? "day" : "night";
+  const font: FontStyle = input.font === "workbench" ? "workbench" : "zen";
   const align: Align =
     input.align === "left" || input.align === "right" || input.align === "center"
       ? input.align
@@ -112,6 +119,7 @@ function sanitize(input: Partial<ZenData>): ZenData {
     ...DEFAULT_ZEN,
     ...input,
     theme,
+    font,
     align,
     size,
     wall,
@@ -307,6 +315,7 @@ function onHomeDown(event: ReactPointerEvent<HTMLDivElement>) {
         className={cn(
           "zen-stage relative mx-auto overflow-hidden bg-ink",
           data.theme === "day" ? "theme-day" : "theme-night",
+          data.font === "workbench" && "font-workbench",
         )}
         aria-label="Zen home screen"
       >
@@ -667,6 +676,7 @@ function SettingsSheet({
         <div className="mt-4">
           <Section title="Appearance" />
           <Row title="Theme" value={themeLabel(data.theme)} onClick={() => onPatch({ theme: cycle(data.theme, THEMES) })} />
+          <Row title="Font" value={fontLabel(data.font)} onClick={() => onPatch({ font: cycle(data.font, FONTS) })} />
           <Row title="Background" value={wallLabel(data.wall)} onClick={() => onPatch({ wall: cycle(data.wall, WALL_CHOICES) })} />
           <Row title="Text" value={sizeLabel(data.size)} onClick={() => onPatch({ size: cycle(data.size, SIZES) })} />
           <Row title="Align" value={alignLabel(data.align)} onClick={() => onPatch({ align: cycle(data.align, ALIGNS) })} />

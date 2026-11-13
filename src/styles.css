@@ -5,6 +5,14 @@
 @import "@fontsource/outfit/500.css";
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Workbench";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/workbench-latin.woff2") format("woff2");
+}
+
 @theme {
   --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
   --font-sans: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
@@ -54,6 +62,24 @@
   --color-fg-dim: #5e574c;
   --color-sheet: #f6f1e8;
   --color-line: #d9d2c5;
+}
+
+.font-workbench {
+  --font-display: "Workbench", ui-monospace, monospace;
+  --font-sans: "Workbench", ui-monospace, monospace;
+  font-family: "Workbench", ui-monospace, monospace;
+  font-synthesis: none;
+  -webkit-font-smoothing: none;
+}
+
+.font-workbench .font-light,
+.font-workbench .font-display,
+.font-workbench .font-sans {
+  font-weight: 400;
+}
+
+.font-workbench .tracking-widest {
+  letter-spacing: 0.06em;
 }
 
 .zen-stage {

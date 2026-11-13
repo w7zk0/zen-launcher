@@ -44,9 +44,11 @@ export type Align = "left" | "center" | "right";
 export type Size = "s" | "m" | "l";
 export type ThemeName = "night" | "day";
 export type Wall = "daily" | "mist" | "shore" | "night";
+export type FontStyle = "zen" | "workbench";
 
 export type ZenData = {
   theme: ThemeName;
+  font: FontStyle;
   align: Align;
   size: Size;
   wall: Wall;
@@ -65,6 +67,7 @@ export type ZenData = {
 
 export const DEFAULT_ZEN: ZenData = {
   theme: "night",
+  font: "zen",
   align: "center",
   size: "m",
   wall: "daily",

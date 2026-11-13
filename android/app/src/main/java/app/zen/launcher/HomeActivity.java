@@ -53,6 +53,7 @@ public class HomeActivity extends AppCompatActivity {
     private static final String[] BACKGROUNDS = {"daily", "mist", "shore", "night", "wallpaper"};
     private static final String[] SIZES = {"s", "m", "l"};
     private static final String[] ALIGNS = {"left", "center", "right"};
+    private static final String[] FONTS = {"zen", "workbench"};
 
     private Prefs prefs;
     private AppRepository repo;
@@ -73,6 +74,9 @@ public class HomeActivity extends AppCompatActivity {
     private LinearLayout settingsBody;
     private Typeface clockFace;
     private Typeface appFace;
+    private Typeface newsreaderFace;
+    private Typeface outfitFace;
+    private Typeface workbenchFace;
     private boolean suppressAuto;
     private WindowInsetsCompat lastInsets;
     private final Handler handler = new Handler(Looper.getMainLooper());
@@ -90,10 +94,14 @@ public class HomeActivity extends AppCompatActivity {
         prefs = new Prefs(this);
         repo = new AppRepository(this, prefs);
         repo.seedIfNeeded();
-        clockFace = ResourcesCompat.getFont(this, R.font.newsreader_light);
-        appFace = ResourcesCompat.getFont(this, R.font.outfit_regular);
-        if (clockFace == null) clockFace = Typeface.SERIF;
-        if (appFace == null) appFace = Typeface.SANS_SERIF;
+        newsreaderFace = ResourcesCompat.getFont(this, R.font.newsreader_light);
+        outfitFace = ResourcesCompat.getFont(this, R.font.outfit_regular);
+        workbenchFace = ResourcesCompat.getFont(this, R.font.workbench);
+        if (newsreaderFace == null) newsreaderFace = Typeface.SERIF;
+        if (outfitFace == null) outfitFace = Typeface.SANS_SERIF;
+        if (workbenchFace == null) workbenchFace = Typeface.MONOSPACE;
+        clockFace = newsreaderFace;
+        appFace = outfitFace;
 
         setContentView(R.layout.activity_home);
         root = findViewById(R.id.root);
@@ -217,6 +225,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void paint() {
+        applyType();
         boolean night = night();
         int text = textColor();
         int dim = dimColor();
@@ -292,7 +301,8 @@ public class HomeActivity extends AppCompatActivity {
         String ap = calendar.get(Calendar.AM_PM) == Calendar.AM ? "am" : "pm";
         String face = hour + ":" + String.format(Locale.US, "%02d", minute) + " " + ap;
         SpannableString span = new SpannableString(face);
-        span.setSpan(new RelativeSizeSpan(0.32f), face.length() - 2, face.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        float suffix = workbench() ? 0.55f : 0.32f;
+        span.setSpan(new RelativeSizeSpan(suffix), face.length() - 2, face.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         clock.setText(span);
     }
 
@@ -419,6 +429,7 @@ public class HomeActivity extends AppCompatActivity {
         view.setText(entry.label);
         view.setTextColor(textColor());
         view.setTypeface(appFace);
+        view.setIncludeFontPadding(workbench());
         view.setTextSize(TypedValue.COMPLEX_UNIT_SP, appSp());
         view.setGravity(gravity());
         view.setPadding(0, dp(12), 0, dp(12));
@@ -549,6 +560,10 @@ public class HomeActivity extends AppCompatActivity {
             prefs.theme(night() ? "day" : "night");
             paint();
         });
+        addChoice("Font", fontLabel(prefs.font()), () -> {
+            prefs.font(next(FONTS, prefs.font()));
+            paint();
+        });
         addChoice("Background", backgroundLabel(prefs.background()), () -> {
             prefs.background(next(BACKGROUNDS, prefs.background()));
             paint();
@@ -646,7 +661,7 @@ public class HomeActivity extends AppCompatActivity {
         view.setText(title.toUpperCase(Locale.getDefault()));
         view.setTextColor(dimColor());
         view.setTypeface(appFace);
-        view.setLetterSpacing(0.16f);
+        view.setLetterSpacing(workbench() ? 0.06f : 0.16f);
         view.setTextSize(TypedValue.COMPLEX_UNIT_SP, 11f);
         view.setPadding(0, dp(22), 0, dp(4));
         settingsBody.addView(view);
@@ -797,6 +812,26 @@ public class HomeActivity extends AppCompatActivity {
         settings.setPadding(gutter, top + dp(12), gutter, bottom + dp(20));
     }
 
+    private boolean workbench() {
+        return "workbench".equals(prefs.font());
+    }
+
+    private void applyType() {
+        boolean bench = workbench();
+        clockFace = bench ? workbenchFace : newsreaderFace;
+        appFace = bench ? workbenchFace : outfitFace;
+        clock.setTypeface(clockFace);
+        clock.setLetterSpacing(bench ? 0f : -0.03f);
+        clock.setIncludeFontPadding(bench);
+        dateView.setTypeface(appFace);
+        dateView.setLetterSpacing(bench ? 0.04f : 0.14f);
+        hint.setTypeface(appFace);
+        hint.setLetterSpacing(bench ? 0.06f : 0.16f);
+        search.setTypeface(clockFace);
+        search.setLetterSpacing(bench ? 0f : -0.02f);
+        drawerHelp.setTypeface(appFace);
+    }
+
     private boolean night() {
         return !"day".equals(prefs.theme());
     }
@@ -850,6 +885,10 @@ public class HomeActivity extends AppCompatActivity {
         if ("s".equals(size)) return "Small";
         if ("l".equals(size)) return "Large";
         return "Medium";
+    }
+
+    private static String fontLabel(String font) {
+        return "workbench".equals(font) ? "Workbench" : "Zen";
     }
 
     private static String alignLabel(String align) {

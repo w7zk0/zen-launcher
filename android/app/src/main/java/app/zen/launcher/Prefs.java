@@ -46,6 +46,14 @@ public final class Prefs {
         sp.edit().putString("theme", value).apply();
     }
 
+    public String font() {
+        return "workbench".equals(sp.getString("font", "zen")) ? "workbench" : "zen";
+    }
+
+    public void font(String value) {
+        sp.edit().putString("font", "workbench".equals(value) ? "workbench" : "zen").apply();
+    }
+
     public String align() {
         return sp.getString("align", "center");
     }
