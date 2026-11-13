@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zen</string>
+    <string name="search_hint">Search</string>
+    <string name="swipe_hint">Swipe up</string>
+    <string name="drawer_help">Type a name. Start with a space to look without opening.</string>
+</resources>

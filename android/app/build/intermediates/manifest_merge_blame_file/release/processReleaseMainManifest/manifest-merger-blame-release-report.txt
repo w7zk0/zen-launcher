@@ -1,0 +1,188 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="app.zen.launcher"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="35" />
+10
+11    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+11-->/workspace/android/app/src/main/AndroidManifest.xml:4:5-76
+11-->/workspace/android/app/src/main/AndroidManifest.xml:4:22-73
+12    <uses-permission android:name="android.permission.VIBRATE" />
+12-->/workspace/android/app/src/main/AndroidManifest.xml:5:5-66
+12-->/workspace/android/app/src/main/AndroidManifest.xml:5:22-63
+13
+14    <queries>
+14-->/workspace/android/app/src/main/AndroidManifest.xml:7:5-12:15
+15        <intent>
+15-->/workspace/android/app/src/main/AndroidManifest.xml:8:9-11:18
+16            <action android:name="android.intent.action.MAIN" />
+16-->/workspace/android/app/src/main/AndroidManifest.xml:9:13-65
+16-->/workspace/android/app/src/main/AndroidManifest.xml:9:21-62
+17
+18            <category android:name="android.intent.category.LAUNCHER" />
+18-->/workspace/android/app/src/main/AndroidManifest.xml:10:13-73
+18-->/workspace/android/app/src/main/AndroidManifest.xml:10:23-70
+19        </intent>
+20    </queries>
+21
+22    <permission
+22-->[androidx.core:core:1.15.0] /root/.gradle/caches/8.11.1/transforms/8ad2ed1cf83e30168ae442c67430bf72/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
+23        android:name="app.zen.launcher.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+23-->[androidx.core:core:1.15.0] /root/.gradle/caches/8.11.1/transforms/8ad2ed1cf83e30168ae442c67430bf72/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
+24        android:protectionLevel="signature" />
+24-->[androidx.core:core:1.15.0] /root/.gradle/caches/8.11.1/transforms/8ad2ed1cf83e30168ae442c67430bf72/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
+25
+26    <uses-permission android:name="app.zen.launcher.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+26-->[androidx.core:core:1.15.0] /root/.gradle/caches/8.11.1/transforms/8ad2ed1cf83e30168ae442c67430bf72/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
+26-->[androidx.core:core:1.15.0] /root/.gradle/caches/8.11.1/transforms/8ad2ed1cf83e30168ae442c67430bf72/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
+27
+28    <application
+28-->/workspace/android/app/src/main/AndroidManifest.xml:14:5-51:19
+29        android:allowBackup="true"
+29-->/workspace/android/app/src/main/AndroidManifest.xml:15:9-35
+30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+30-->[androidx.core:core:1.15.0] /root/.gradle/caches/8.11.1/transforms/8ad2ed1cf83e30168ae442c67430bf72/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
+31        android:enableOnBackInvokedCallback="true"
+31-->/workspace/android/app/src/main/AndroidManifest.xml:21:9-51
+32        android:extractNativeLibs="false"
+33        android:icon="@drawable/ic_launcher"
+33-->/workspace/android/app/src/main/AndroidManifest.xml:16:9-45
+34        android:label="@string/app_name"
+34-->/workspace/android/app/src/main/AndroidManifest.xml:17:9-41
+35        android:roundIcon="@drawable/ic_launcher"
+35-->/workspace/android/app/src/main/AndroidManifest.xml:18:9-50
+36        android:supportsRtl="true"
+36-->/workspace/android/app/src/main/AndroidManifest.xml:19:9-35
+37        android:theme="@style/Theme.Zen" >
+37-->/workspace/android/app/src/main/AndroidManifest.xml:20:9-41
+38        <activity
+38-->/workspace/android/app/src/main/AndroidManifest.xml:23:9-38:20
+39            android:name="app.zen.launcher.HomeActivity"
+39-->/workspace/android/app/src/main/AndroidManifest.xml:24:13-41
+40            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode|screenLayout|smallestScreenSize"
+40-->/workspace/android/app/src/main/AndroidManifest.xml:31:13-122
+41            android:excludeFromRecents="true"
+41-->/workspace/android/app/src/main/AndroidManifest.xml:28:13-46
+42            android:exported="true"
+42-->/workspace/android/app/src/main/AndroidManifest.xml:25:13-36
+43            android:launchMode="singleTask"
+43-->/workspace/android/app/src/main/AndroidManifest.xml:26:13-44
+44            android:resizeableActivity="true"
+44-->/workspace/android/app/src/main/AndroidManifest.xml:29:13-46
+45            android:stateNotNeeded="true"
+45-->/workspace/android/app/src/main/AndroidManifest.xml:27:13-42
+46            android:windowSoftInputMode="adjustResize" >
+46-->/workspace/android/app/src/main/AndroidManifest.xml:30:13-55
+47            <intent-filter>
+47-->/workspace/android/app/src/main/AndroidManifest.xml:32:13-37:29
+48                <action android:name="android.intent.action.MAIN" />
+48-->/workspace/android/app/src/main/AndroidManifest.xml:9:13-65
+48-->/workspace/android/app/src/main/AndroidManifest.xml:9:21-62
+49
+50                <category android:name="android.intent.category.HOME" />
+50-->/workspace/android/app/src/main/AndroidManifest.xml:34:17-73
+50-->/workspace/android/app/src/main/AndroidManifest.xml:34:27-70
+51                <category android:name="android.intent.category.DEFAULT" />
+51-->/workspace/android/app/src/main/AndroidManifest.xml:35:17-76
+51-->/workspace/android/app/src/main/AndroidManifest.xml:35:27-73
+52                <category android:name="android.intent.category.LAUNCHER" />
+52-->/workspace/android/app/src/main/AndroidManifest.xml:10:13-73
+52-->/workspace/android/app/src/main/AndroidManifest.xml:10:23-70
+53            </intent-filter>
+54        </activity>
+55
+56        <receiver
+56-->/workspace/android/app/src/main/AndroidManifest.xml:40:9-50:20
+57            android:name="app.zen.launcher.ZenAdmin"
+57-->/workspace/android/app/src/main/AndroidManifest.xml:41:13-37
+58            android:exported="true"
+58-->/workspace/android/app/src/main/AndroidManifest.xml:42:13-36
+59            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+59-->/workspace/android/app/src/main/AndroidManifest.xml:43:13-70
+60            <meta-data
+60-->/workspace/android/app/src/main/AndroidManifest.xml:44:13-46:56
+61                android:name="android.app.device_admin"
+61-->/workspace/android/app/src/main/AndroidManifest.xml:45:17-56
+62                android:resource="@xml/device_admin" />
+62-->/workspace/android/app/src/main/AndroidManifest.xml:46:17-53
+63
+64            <intent-filter>
+64-->/workspace/android/app/src/main/AndroidManifest.xml:47:13-49:29
+65                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+65-->/workspace/android/app/src/main/AndroidManifest.xml:48:17-82
+65-->/workspace/android/app/src/main/AndroidManifest.xml:48:25-79
+66            </intent-filter>
+67        </receiver>
+68
+69        <provider
+69-->[androidx.emoji2:emoji2:1.3.0] /root/.gradle/caches/8.11.1/transforms/f80625029a223ca1f6446085fe87fb4d/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+70            android:name="androidx.startup.InitializationProvider"
+70-->[androidx.emoji2:emoji2:1.3.0] /root/.gradle/caches/8.11.1/transforms/f80625029a223ca1f6446085fe87fb4d/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+71            android:authorities="app.zen.launcher.androidx-startup"
+71-->[androidx.emoji2:emoji2:1.3.0] /root/.gradle/caches/8.11.1/transforms/f80625029a223ca1f6446085fe87fb4d/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+72            android:exported="false" >
+72-->[androidx.emoji2:emoji2:1.3.0] /root/.gradle/caches/8.11.1/transforms/f80625029a223ca1f6446085fe87fb4d/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+73            <meta-data
+73-->[androidx.emoji2:emoji2:1.3.0] /root/.gradle/caches/8.11.1/transforms/f80625029a223ca1f6446085fe87fb4d/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+74                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+74-->[androidx.emoji2:emoji2:1.3.0] /root/.gradle/caches/8.11.1/transforms/f80625029a223ca1f6446085fe87fb4d/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+75                android:value="androidx.startup" />
+75-->[androidx.emoji2:emoji2:1.3.0] /root/.gradle/caches/8.11.1/transforms/f80625029a223ca1f6446085fe87fb4d/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+76            <meta-data
+76-->[androidx.lifecycle:lifecycle-process:2.6.2] /root/.gradle/caches/8.11.1/transforms/2c0e5ce565d75bfa22b96df232c96979/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+77                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+77-->[androidx.lifecycle:lifecycle-process:2.6.2] /root/.gradle/caches/8.11.1/transforms/2c0e5ce565d75bfa22b96df232c96979/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+78                android:value="androidx.startup" />
+78-->[androidx.lifecycle:lifecycle-process:2.6.2] /root/.gradle/caches/8.11.1/transforms/2c0e5ce565d75bfa22b96df232c96979/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+79            <meta-data
+79-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+80                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+80-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+81                android:value="androidx.startup" />
+81-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+82        </provider>
+83
+84        <receiver
+84-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+85            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+85-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+86            android:directBootAware="false"
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+87            android:enabled="true"
+87-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+88            android:exported="true"
+88-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+89            android:permission="android.permission.DUMP" >
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+90            <intent-filter>
+90-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+91                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+92            </intent-filter>
+93            <intent-filter>
+93-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+94                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+95            </intent-filter>
+96            <intent-filter>
+96-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+97                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+98            </intent-filter>
+99            <intent-filter>
+99-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+100                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+100-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+100-->[androidx.profileinstaller:profileinstaller:1.3.1] /root/.gradle/caches/8.11.1/transforms/9587475b468d9b96a89543e0fd3b364e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+101            </intent-filter>
+102        </receiver>
+103    </application>
+104
+105</manifest>

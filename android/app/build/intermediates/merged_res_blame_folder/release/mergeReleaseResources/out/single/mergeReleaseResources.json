@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "app.zen.launcher.app-release-24:/font_newsreader_light.ttf.flat",
+        "source": "app.zen.launcher.app-main-25:/font/newsreader_light.ttf"
+    },
+    {
+        "merged": "app.zen.launcher.app-release-24:/layout_activity_home.xml.flat",
+        "source": "app.zen.launcher.app-main-25:/layout/activity_home.xml"
+    },
+    {
+        "merged": "app.zen.launcher.app-release-24:/xml_device_admin.xml.flat",
+        "source": "app.zen.launcher.app-main-25:/xml/device_admin.xml"
+    },
+    {
+        "merged": "app.zen.launcher.app-release-24:/drawable_ic_enso.xml.flat",
+        "source": "app.zen.launcher.app-main-25:/drawable/ic_enso.xml"
+    },
+    {
+        "merged": "app.zen.launcher.app-release-24:/drawable_ic_launcher.xml.flat",
+        "source": "app.zen.launcher.app-main-25:/drawable/ic_launcher.xml"
+    },
+    {
+        "merged": "app.zen.launcher.app-release-24:/drawable-nodpi_wall_night.jpg.flat",
+        "source": "app.zen.launcher.app-main-25:/drawable-nodpi/wall_night.jpg"
+    },
+    {
+        "merged": "app.zen.launcher.app-release-24:/font_outfit_regular.ttf.flat",
+        "source": "app.zen.launcher.app-main-25:/font/outfit_regular.ttf"
+    },
+    {
+        "merged": "app.zen.launcher.app-release-24:/drawable-nodpi_wall_shore.jpg.flat",
+        "source": "app.zen.launcher.app-main-25:/drawable-nodpi/wall_shore.jpg"
+    },
+    {
+        "merged": "app.zen.launcher.app-release-24:/drawable-nodpi_wall_mist.jpg.flat",
+        "source": "app.zen.launcher.app-main-25:/drawable-nodpi/wall_mist.jpg"
+    }
+]

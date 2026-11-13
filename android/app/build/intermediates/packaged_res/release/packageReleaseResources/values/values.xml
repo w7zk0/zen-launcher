@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fg">#F4F0E8</color>
+    <color name="fg_dim">#CFC6B8</color>
+    <color name="ink">#1C1915</color>
+    <color name="moss">#3F5348</color>
+    <color name="paper">#F3EFE6</color>
+    <color name="stone">#8A8175</color>
+    <string name="app_name">Zen</string>
+    <string name="drawer_help">Type a name. Start with a space to look without opening.</string>
+    <string name="search_hint">Search</string>
+    <string name="swipe_hint">Swipe up</string>
+    <style name="Theme.Zen" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <item name="android:enforceStatusBarContrast">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="colorAccent">@color/moss</item>
+    </style>
+    <style name="ZenDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/paper</item>
+        <item name="android:windowBackground">@color/paper</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textColorPrimary">@color/ink</item>
+        <item name="android:textColorSecondary">@color/stone</item>
+        <item name="colorAccent">@color/moss</item>
+        <item name="buttonBarPositiveButtonStyle">@style/ZenDialogButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/ZenDialogButton</item>
+        <item name="buttonBarNeutralButtonStyle">@style/ZenDialogButton</item>
+    </style>
+    <style name="ZenDialogButton" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/moss</item>
+    </style>
+</resources>

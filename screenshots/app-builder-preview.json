@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Zen",
+      "hasCanvas": false,
+      "bodyTextLen": 625,
+      "bodyTextHash": "19d5338d56adb5d7a7e3baea3161b197b0b345f0aca7b505573117947ac12c9c",
+      "bodyTextPrefix": "72 Swipe up Phone Messages Camera Maps Notes Close Browser Calcu",
+      "horizontalOverflow": false,
+      "consoleErrors": [
+        "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <OutletImpl>\n      <Suspense fallback={null}>\n        <MatchImpl routeId=\"/\">\n          <MatchView router={{...}} match={{id:\"//\",ssr:true, ...}}>\n            <CatchBoundary getResetKey={function getResetKey} errorComponent={function AppErrorComponent} ...>\n              <MatchInnerImpl match={{id:\"//\",ssr:true, ...}}>\n                <Lazy>\n                  <Home>\n                    <ZenScreen>\n                      <main className=\"min-h-dvh ...\">\n                        <section className=\"zen-stage ...\" aria-label=\"Zen home s...\">\n                          <img>\n                          <div>\n                          <div>\n                          <div className=\"zen-fade a...\" aria-hidden={true}>\n                            <div className=\"flex items...\">\n                              <input\n                                ref={{current:null}}\n                                value=\"\"\n                                onChange={function onChange}\n                                onKeyDown={function onKeyDown}\n                                placeholder=\"Search\"\n                                aria-label=\"Search apps\"\n                                autoCapitalize=\"none\"\n                                autoCorrect=\"off\"\n                                spellCheck={false}\n                                className=\"w-full bg-transparent font-display text-4xl font-light text-fg outline-none...\"\n-                               style={{caret-color:\"transparent\"}}\n                              >\n                              ...\n                            ...\n                        ...\n"
+      ],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Zen",
+      "hasCanvas": false,
+      "bodyTextLen": 258,
+      "bodyTextHash": "e4252f67bc7f85a2ec207a669b48aa489f074b8236b21c67bfae8e66191ecb04",
+      "bodyTextPrefix": "3:02 72 3:02pm Thursday, November 12 Swipe up Phone Messages Cam",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

@@ -1,0 +1,95 @@
+@import "@fontsource/newsreader/300.css";
+@import "@fontsource/newsreader/400.css";
+@import "@fontsource/outfit/300.css";
+@import "@fontsource/outfit/400.css";
+@import "@fontsource/outfit/500.css";
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
+
+  --color-ink: #1c1915;
+  --color-ink-soft: #3a342c;
+  --color-paper: #f3efe6;
+  --color-paper-2: #e7e1d4;
+  --color-stone: #8a8175;
+  --color-moss: #3f5348;
+  --color-fg: #f4f0e8;
+  --color-fg-dim: #cfc6b8;
+  --color-sheet: #141210;
+  --color-line: #3a342c;
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  ::selection {
+    background: var(--color-moss);
+    color: var(--color-paper);
+  }
+}
+
+.theme-night {
+  --color-fg: #f4f0e8;
+  --color-fg-dim: #cfc6b8;
+  --color-sheet: #141210;
+  --color-line: #3a342c;
+}
+
+.theme-day {
+  --color-fg: #1c1915;
+  --color-fg-dim: #5e574c;
+  --color-sheet: #f6f1e8;
+  --color-line: #d9d2c5;
+}
+
+.zen-stage {
+  height: 100dvh;
+  width: 100%;
+}
+
+.zen-clock {
+  font-variant-numeric: tabular-nums;
+}
+
+.zen-suffix {
+  margin-left: 0.35rem;
+  font-size: 0.35em;
+  letter-spacing: 0;
+  vertical-align: top;
+}
+
+.zen-scroll {
+  scrollbar-width: none;
+}
+.zen-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .zen-stage {
+    height: min(46rem, calc(100dvh - 2.5rem));
+    width: 24rem;
+    border-radius: 1.75rem;
+    box-shadow: 0 28px 70px rgb(28 25 21 / 16%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zen-fade {
+    transition: none;
+  }
+}
